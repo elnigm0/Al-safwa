@@ -1,0 +1,877 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body {
+    
+}
+
+header {
+    background-color: #00000083; 
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    height: 70px;
+    top: 0;
+    border-bottom: 2px #007575 solid;
+    
+
+}
+.logo {
+    text-decoration: none;
+    color: #5c00e7;
+    text-transform: uppercase;
+    font-weight: 700px;
+    font-size: 1.8em;
+}
+.logo img {
+    margin-top: 30px ;
+    width: 70px;
+    height: 70px;
+    border: 2px #007575 solid;
+}
+.navigation a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight:500 ;
+    margin-left: 10px;
+}
+.navigation a:hover {
+    color: #007575;
+}
+/*  End  navigation */
+section {
+    padding: 100px 200px;
+}
+
+/* Start main */
+.main{
+    width:100% ;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+.main h2{
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 500;
+   
+}
+.main h2 span{
+    color: #ce3b00;
+    font-size: 3em;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    
+
+}
+.main h3{
+    color: #001b05;
+    font-size: 2em;
+    font-weight:700 ;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    color: #fff;
+    background-color: #007575 ;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    border: 5px solid #5a3000 ;
+    border-bottom-color: #000;
+    border-top-color: red;
+    border-right-color: #fff;
+    border-left-color: #fff;
+    margin-bottom: 40px;
+    transition: 1.7s ease;
+}
+
+.main-btn:hover{   
+        background-color: #fff;
+        color: #bea400;
+}
+
+/* Start icon */
+.social-icons .first {
+    color:#0057ff ;
+    font-size: 30px;
+    padding-right: 13px;
+    padding-left: 13px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+.social-icons .second {
+    color:#00e461;
+    font-size: 30px;
+    margin-right: 25px ;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+.social-icons .third {
+    color:#ed000a ;
+    font-size: 30px;
+    margin-right: 25px ;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 100%;
+    background-color: #fff;
+    
+}
+/* End icon */
+
+
+.social-icons a:hover{
+    color: silver;
+}
+/* End main */
+
+/*  Start sec2 */
+.cards {
+      
+     background-color:#222;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    color:#00ffd5 ;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: transparent;
+    border: 2px solid #00ffd5 ;
+    border-radius: 20px;
+    box-shadow: #00ffd5 3px 5px 6px ;
+   
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.card{
+    background-color: transparent;
+    width: 21.25em;
+    box-shadow: 0 5px 25px #00ffd5;
+    border-radius: 10px;
+    padding:25px ;
+    margin: 15px;
+    transition: 1.7s ease;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.icon {
+    font-size: 8em;
+    text-align: center;
+    
+}
+.icon .fr-icon {
+    color: #80eaff;
+
+}
+.icon .nd-icon {
+    color: #f8ff00;
+}
+.info{
+    text-align: center;
+}
+.info h3{
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+}
+.info p {
+    color: #00ffd5;
+}
+
+
+/*
+=============================
+=======Start  projects=======
+=============================
+*/
+
+.projects {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    margin-top: 300px;
+    margin-bottom: 300px;
+    transition: background-image 1s ease-in-out;
+    background: #000;
+}
+.projects .content{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    overflow-x:auto ;
+    overflow-y:auto ;
+    background: #000;
+}
+.project-card{
+    background: linear-gradient(to right, #002dff5b, #00ffc05b);
+    border: 1px solid #00ffc0;
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px ;   
+    transition: 0.7s ease;
+    
+}
+.project-card:hover{
+    transform: scale(1.1);
+}
+
+.project-image img{
+    width: 100%;
+    padding: 30px;
+    border-radius: 40px;
+}
+.project-card:hover .project-image{
+    opacity: 0.9;
+}
+
+.project-info{
+    padding: 1em;
+    
+}
+.project-category{
+    font-size: 0.8em ;
+    color: #aafff4;   
+    padding: 10px; 
+}
+.project-title{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px;
+}
+.project-title a {
+    background: transparent;
+    border: 2px solid #55d5ff;
+    padding: 10px;
+    text-decoration: none;
+    color: #55d5ff;
+    border-radius: 15px;
+    font-size: 6px;
+}
+.project-title a:hover {
+    background: #55d5ff;
+    color: transparent;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 80px;
+    background: transparent;
+    border: 2px solid #8098ff;
+    border-right: none;
+    border-left: none;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 80px;
+}
+.project-card {
+    scroll-snap-align: start;
+}
+/*
+=============================
+========End  projects========
+=============================
+*/
+
+/* Start contact */
+.content .card {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.contact .icon{
+
+    font-size: 4.5em;
+}
+
+.contact .info h3{
+    
+    color: #d76c74;
+    
+}
+
+.contact .info p {
+     font-size: 10px ;
+    color: #fff;
+}
+.phone-icon {
+    color: #40e0ff;
+}
+.email-icon {
+    color: #006cff;
+}
+
+.images img {
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    border-radius: 6px;
+    border-left: 5px solid yellow;
+    border-right: 5px solid green;
+    border-top: 5px solid blue;
+    border-bottom: 5px solid red;
+}
+
+.images h3 {
+    background: #fff;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 6px;
+    border-left: 5px solid yellow;
+    border-right: 5px solid green;
+    border-top: 5px solid blue;
+    border-bottom: 5px solid red;
+}
+
+.footer {
+    background-color: #000016;
+    color: #fff;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-title{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.footer-title span{
+    color: #5c40ff;
+}
+
+.footer. social-icons {
+    font-size: 1.3em;
+}
+/* Start icon footer */
+.footer .social-icons .first {
+    color:#0057ff ;
+    font-size: 30px;
+    margin-left: 10px ;
+    padding-right: 13px;
+    padding-left: 13px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+.footer .social-icons .second {
+    color:#009d43 ;
+    font-size: 30px;
+    margin-left: 20px ;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+.footer .social-icons .third {
+    color:#ed000a ;
+    font-size: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 100%;
+    background-color: #fff;
+    
+}
+/* End icon footer */
+
+
+/*
+=============================
+=========Start tester========
+=============================
+*/
+.login_in h2 {
+    text-align: center;
+    color: #0a7974;
+}
+.login_in label {
+    color: #0a7974;
+    margin: 10px 10px;
+}
+.login_in input {
+      margin: 10px 20px;
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #00ade6; 
+      border-radius: 6px;
+}
+.login_in input:focus {
+     transform: scale(1.1); 
+     background: #007ea7;   
+}
+.login_in button {
+      margin: 10px 20px;
+      padding: 8px;
+      width: 100px;
+      text-align: center;
+      font-size: 16px;  
+      border: none;
+      color: #fff;
+      background: #0a7974;
+      border-radius: 20px;
+}
+.hidden {
+      display: none;
+}
+ 
+/****** خط الفاصل بشكل احترافي  ******/
+.elegant-hr {
+    border: 0;
+    height: 2px;
+    margin: 20px auto;
+    width: 50%;
+    position: relative;
+    background: linear-gradient(90deg, 
+              rgba(0,0,0,0) 0%, 
+              rgba(0,255,255,0.5) 20%, 
+              rgba(0,255,255,1) 50%, 
+              rgba(0,255,255,0.5) 80%, 
+              rgba(0,0,0,0) 100%);
+    
+}
+  
+.elegant-hr::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+              rgba(0,0,0,0) 0%, 
+              rgba(255,255,255,0.7) 20%, 
+              rgba(255,255,255,1) 50%, 
+              rgba(255,255,255,0.7) 80%, 
+              rgba(0,0,0,0) 100%);
+}
+  
+.elegant-hr::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+              rgba(0,0,0,0) 0%, 
+              rgba(255,255,255,0.3) 20%, 
+              rgba(255,255,255,0.5) 50%, 
+              rgba(255,255,255,0.3) 80%, 
+              rgba(0,0,0,0) 100%);
+}
+/*
+=============================
+==========End tester=========
+=============================
+*/
+
+
+
+
+
+/*
+=============================
+=========Start second========
+=============================
+*/
+.homes {
+    margin: 10px;
+    border-radius: 20px;
+}
+.homes h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 40px;
+  
+}
+.homes i {
+    font-size: 30px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-title {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+@media (max-width: 600px) {
+  .video-title {
+    font-size: 16px;
+  }
+}
+/*
+=============================
+==========End second=========
+=============================
+*/
+.eng {
+    background-color: #000;
+}
+.eng a {
+    color: #fff;
+    font: 15px;
+    text-align: center;
+}
+.eng span {
+    color: #0096ff;
+}
+@media(max-width:1023px){
+    
+    header {
+        padding: 20px 12px;
+    }
+    
+    .navigation a{
+        padding-left: 10px;
+    }
+    .title {
+        font-size: 1.8em;
+    }
+    
+    section {
+        padding: 80px 20px;
+    }
+    
+    .min-content h2{
+        font-size: 1em;
+    }
+    
+    .min-content h3{
+        font-size: 1.6em;
+    }
+    
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+}
+
+@media(max-width:641px){
+
+    body {
+        font-size: 12px;
+    }
+   .min-content h2{
+        font-size: 0.8em;
+    }
+    
+   .min-content h3{
+        font-size: 1.4em;
+    }
+}
+
+
+@media(max-width:300px){
+    
+    body {
+        font-size: 10px;
+    }
+        details {
+        top: -2px;
+        right: -0px;
+
+    }
+}
+
+@media(max-width:435px){
+    
+    details {
+        top: -0.0px;
+        right: -0.0px;
+
+    }
+    
+}
+
+
+
+/* الحاوية العامة للنماذج والجداول */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق النماذج */
+.form-container h2,
+.table-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* تنسيق الجدول */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+/* زر العودة للرئيسية */
+.back-btn {
+  background-color: #007bff;
+}
+
+.back-btn:hover {
+  background-color: #0069d9;
+}
+
+/* تنسيق النافذة المنبثقة للتعديل */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 350px;
+  margin: 100px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.admin-btn {
+  background-color: #ff9800; /* لون مميز */
+  color: #fff;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.admin-btn:hover {
+  background-color: #e68900;
+  transform: scale(1.05);
+}
+
+/* تنسيق عام */
+
+
+/* صندوق الامتحان */
+.container {
+    background: white;
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+
+/* عنوان الامتحان */
+h1 {
+    font-size: 32px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* تنسيق الأسئلة */
+.question {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* تنسيق الخيارات */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    transition: 0.3s;
+}
+
+label:hover {
+    background: #d9d9d9;
+}
+
+/* زر الإرسال */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+}
+
+
+/* Start test */
+.admin-btn a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+/* End  test */

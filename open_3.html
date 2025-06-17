@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    
+<!-- 1️⃣ ترميز اللغة وضبط العرض على جميع الأجهزة -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- لينك Google  search console-->
+<meta name="google-site-verification" content="Xcmi0engG1c1WS3iVAgjZfXmtJyIRPwJMIAppy7hKnY" />
+    <!-- باقي المحتوى -->
+
+<!-- 3️⃣ Social Media Account Links -->
+<link rel="me" href="#">
+<link rel="me" href="https://chat.whatsapp.com/CqsjG4lgD4T3DxHKad4JRt">
+<link rel="me" href="https://youtube.com/channel/UCFWkDYoE-_g01p72oh-5I1g?si=CytEEOjan8PF9EdG">
+
+
+
+
+<!-- 4️⃣ تحسين الظهور على فيسبوك (Open Graph) -->
+<meta property="og:title" content="سنتر الصفوة التعليمي ">
+<meta property="og:description" content="سنتر الصفوة التعليمي ">
+<meta property="og:image" content="#logo.png">
+<meta property="og:url" content="#">
+<meta property="og:type" content="website">
+
+
+
+
+
+<!-- إضافة رابط sitemap.xml في HTML -->
+
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="#sitemap.xml">
+<link rel="canonical" href="#" />
+
+<!-- الخطوط  -->   	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+<!-- الايقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" href="logo.png">
+    
+    <title>سنتر الصفوة التعليمي </title>
+</head>
+
+<body dir="rtl" bgcolor="#f2f2f2" style="margin: 30px;">
+
+
+
+
+
+<!--
+=============================
+=========Start Log in========
+=============================
+-->
+<div class="login_in">
+      <h2>تسجيل الدخول للامتحان</h2>
+
+
+  <div id="login">
+    <label>الاسم الرباعي:</label>
+<br>    
+    <input type="text" id="studentName" placeholder="أكتب الاسم رباعي" required>
+<br>
+    <label>كود الطالب (من A12345 إلى A67890):</label>
+<br>    
+    <input type="text" id="studentCode" placeholder="اكتب الكود" required>
+<br>
+    <button onclick="startExam()">ابدأ الامتحان</button>
+    <p id="loginError" style="color: red;"></p>
+  </div>
+</div>  
+<!--
+=============================
+==========End Log in=========
+=============================
+-->
+
+
+
+
+
+<!--
+=============================
+==========Start Test=========
+=============================
+-->
+
+
+<!-- Start Question -->
+  <div id="exam" class="hidden">
+    <h3>كلمة تَقَدُّم</h3>
+    <input type="radio" name="q1" value="اسم"> اسم<br>
+    <input type="radio" name="q1" value="فعل"> فعل<br><br>
+    <input type="radio" name="q1" value="حرف"> حرف<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>العلم نور</h3>
+    <input type="radio" name="q2" value="مبتدأ"> مبتدأ<br>
+    <input type="radio" name="q2" value="خبر"> خبر<br><br>
+    <input type="radio" name="q2" value="فاعل"> فاعل<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>جمع كلمة طربق</h3>
+    <input type="radio" name="q3" value="طرقات"> طرقات<br>
+    <input type="radio" name="q3" value="طرق"> طرق<br><br>
+    <input type="radio" name="q3" value="طرائق"> طرائق<br><br>
+<!-- End Question -->
+
+
+
+
+<!-- Start Question -->
+    <h3>مصر ام الدنيا تعبير</h3>
+    <input type="radio" name="q4" value="حقيقي"> حقيقي<br>
+    <input type="radio" name="q4" value="مجازي"> مجازي<br><br>
+<!-- End Question -->
+
+
+<!-- Start Question -->
+    <h3>اكتب الدرس: كلمة اكتب</h3>
+    <input type="radio" name="q5" value="همزة قطع"> همزة قطع<br>
+    <input type="radio" name="q5" value="ألف وصل"> ألف وصل<br><br>
+<!-- End Question -->
+
+
+<!-- Start Question -->
+    <h3>الصديقان مخلصان : علامة رفع المبتدأ والخبر </h3>
+    <input type="radio" name="q6" value="الضمة"> الضمة<br>
+    <input type="radio" name="q6" value="الواو"> الواو<br><br>
+    <input type="radio" name="q6" value="الألف"> الألف<br><br>
+<!-- End Question -->
+
+
+
+<!-- Start Question -->
+    <h3>مصر نورها ساطع:الضمير في الجملة</h3>
+    <input type="radio" name="q7" value="متصل"> متصل<br>
+    <input type="radio" name="q7" value="منفصل"> منفصل<br><br>
+    <input type="radio" name="q7" value="مستتر"> مستتر<br><br>
+<!-- End Question -->
+
+
+
+<!-- Start Question -->
+    <h3>التلميذ يكتب الدرس:نوع الخبر</h3>
+    <input type="radio" name="q8" value="مفرد"> مفرد<br>
+    <input type="radio" name="q8" value="  جملة اسمية">  جملة اسمية<br><br>
+    <input type="radio" name="q8" value="جملة_فعلية">جملة فعلية<br><br>
+<!-- End Question -->
+
+
+
+<!-- Start Question -->
+    <h3>التلاميذ يكتبون الدرس :يكتبون</h3>
+    <input type="radio" name="q9" value="فعل_من_الافعل_الخمسة"> فعل من الافعل الخمسة<br>
+    <input type="radio" name="q9" value="جمع مذكر سالم"> جملة مذكر سالم<br><br>
+    <input type="radio" name="q9" value="فعل ناسخ"> فعل ناسخ<br><br>
+<!-- End Question -->
+
+
+<!-- Start Question -->
+    <h3>ظلت مصر شامخة :شامخة</h3>
+    <input type="radio" name="q10" value="مفعول به"> مفعول به<br>
+    <input type="radio" name="q10" value="خبر_ظل"> خبر ظل<br><br>
+    <input type="radio" name="q10" value="فاعل"> فاعل<br><br>
+<!-- End Question -->
+
+
+
+<!--(((((( True  or False ))))))-->
+
+
+<!-- Start Question -->
+    <h3> لا اسمع الاغاني ، اسلوب نهي </h3>
+    <input type="radio" name="q11" value="صح"> صح<br>
+    <input type="radio" name="q11" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+<!-- Start Question -->
+    <h3>اشتريت الكتاب الجديد اعراب كلمة الكتاب مفعول بة</h3>
+    <input type="radio" name="q12" value="صح"> صح<br>
+    <input type="radio" name="q12" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+
+<!-- Start Question -->
+    <h3> اضحى حرف ناسخ </h3>
+    <input type="radio" name="q13" value="صح"> صح<br>
+    <input type="radio" name="q13" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+
+<!-- Start Question -->
+    <h3> التلميذان مجتهدان - مجتهدان فاعل </h3>
+    <input type="radio" name="q14" value="صح"> صح<br>
+    <input type="radio" name="q14" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+<!-- Start Question -->
+    <h3> مصر جوها معتدل - نوع الخبر جملة اسمية </h3>
+    <input type="radio" name="q15" value="صح"> صح<br>
+    <input type="radio" name="q15" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+<!-- Start Question -->
+    <h3> انا احب وطني - ضمير متصل </h3>
+    <input type="radio" name="q16" value="صح"> صح<br>
+    <input type="radio" name="q16" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+<!-- Start Question -->
+    <h3> الحق فوق الباطل - الباطل مضاف إلية  </h3>
+    <input type="radio" name="q17" value="صح"> صح<br>
+    <input type="radio" name="q17" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+
+
+<!-- Start Question -->
+    <h3> صنعت مصر سيارة حديثة - حديثة فاعل </h3>
+    <input type="radio" name="q18" value="صح"> صح<br>
+    <input type="radio" name="q18" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+
+<!-- Start Question -->
+    <h3> المصريون يصنعون التاريخ - يصنعون مرفوع بثبوت النون </h3>
+    <input type="radio" name="q19" value="صح"> صح<br>
+    <input type="radio" name="q19" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+
+
+<!-- Start Question -->
+    <h3> المصريون امام العدو أسود - نوع الخبر شبه جملة </h3>
+    <input type="radio" name="q20" value="صح"> صح<br>
+    <input type="radio" name="q20" value="خطأ"> خطأ<br><br>
+<!-- End Question -->
+
+
+
+
+
+    <button onclick="submitExam()">إنهاء الامتحان</button>
+  </div>
+
+  <div id="result" class="hidden"></div>
+<!--
+=============================
+===========End Test==========
+=============================
+-->
+
+  <script src="main.js"></script>
+</body>
+</html>
