@@ -10,8 +10,8 @@ body {
     
 }
 
-header {
-    background-color: #000000c3;
+header {   
+    background-color: rgba(0, 0, 0, 0.95);
     width: 100%;
     position: fixed;
     z-index: 999;
@@ -90,7 +90,7 @@ header {
 
 header.scrolled {
     height: 60px;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #000000c3;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
