@@ -479,3 +479,33 @@
       document.getElementById("exam").classList.add("hidden");
       resultDiv.classList.remove("hidden");
     }
+
+
+
+
+/*
+=============================
+=========Start header========
+=============================
+*/
+
+   window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const logo = document.querySelector('.logo');
+        const logoImg = document.querySelector('.logo img');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            logo.classList.add('scrolled');
+            logoImg.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            logo.classList.remove('scrolled');
+            logoImg.classList.remove('scrolled');
+        }
+    });
+    
+/*
+=============================
+==========End header=========
+=============================
+*/
