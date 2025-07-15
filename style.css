@@ -6,12 +6,15 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+a {
+    font-family: "Cairo", sans-serif;
+}
 body {
     
 }
 
-header {   
-    background-color: rgba(0, 0, 0, 0.95);
+header {
+    background-color: #000000c3;
     width: 100%;
     position: fixed;
     z-index: 999;
@@ -90,7 +93,7 @@ header {
 
 header.scrolled {
     height: 60px;
-    background-color: #000000c3;
+    background-color: rgba(0, 0, 0, 0.95);
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
@@ -114,7 +117,7 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url("https://elnigm0.github.io/Al-safwa/background.jpg");
+    background-image: url("/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -599,8 +602,9 @@ section {
 }
 .homes i {
     font-size: 30px;
-    color: red;
+    color: #00371c;
     margin-bottom: 10px;
+    
 }
 
 
@@ -973,50 +977,51 @@ button:hover {
 .enter_old {
     height: 100vh;
 }
+
+
+
 .chooses {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    display: flex;   
-    align-items: center;
-    justify-content: center;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  list-style: none;
+  background-color: #f4f4f4;
 }
-.chooses .choose{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    overflow-x:auto ;
-    background-size: 100px;
-}
-/* .chooses {
-        text-align: center;
-        margin-top: 150px;  
-        
-} */
+
 .chooses li {
-    list-style: none;
-    padding: 50px;    
+  list-style: none;
 }
+
 .chooses a {
-    text-decoration: none;
-    color: #fff;
-    font: 20px;
-    padding: 40px;
-    padding-left: 100px;   
-    padding-right: 100px;       
-    background: linear-gradient(to right, #0018ff, #000747);  
-    border-radius: 6px;
-    border: 1px solid #fff;
-    transition: 0.3s;
+  display: block;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 160px;
 }
+
 .chooses a:hover {
-    background: linear-gradient(to right, #313131, silver);
-    transform: scale(1.1) ;
-    color: seashell;
+  background: linear-gradient(to right, #2980b9, #1abc9c);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-/****** خط الفاصل بشكل احترافي رقم واحد  ******/
+
+@media (max-width: 600px) {
+  .chooses a {
+    font-size: 16px;
+    padding: 10px 20px;
+    min-width: 130px;
+  }
+}
 .elegant-hr {
     border: 0;
     height: 2px;
@@ -1112,7 +1117,110 @@ button:hover {
 */
 
 
+/* العنوان */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
 
+/* زر الرجوع */
+.homes a {
+  display: inline-block;
+  font-size: 15px;
+  color: #2980b9;
+  margin-bottom: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.homes a i {
+  margin-right: 5px;
+}
+
+/* الحاوية */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* كارت الـ PDF */
+.pdf-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.pdf-card:hover {
+  transform: translateY(-3px);
+}
+
+/* اسم الملف */
+.pdf-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #34495e;
+}
+
+/* زر التحميل */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* للشاشات من 400px إلى فوق */
+@media (min-width: 320pxpx) {
+  h1 {
+    font-size: 12px;
+  }
+
+  .pdf-name {
+    font-size: 7px;
+  }
+
+  .btn {
+    font-size: 1px;
+    padding: 10px 20px;
+  }
+}
+
+/* من أول 600px نعرض عمودين */
+@media (min-width: 375px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  h1 {
+    font-size: 12px;
+  }
+
+  .pdf-name {
+    font-size: 8px;
+  }
+
+  .btn {
+    font-size: 6px;
+  }
+}
 /*
 =============================
 ==========End books==========
