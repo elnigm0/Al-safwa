@@ -1226,32 +1226,42 @@ h1 {
 ==========End books==========
 =============================
 */
-/* حاوية الكتب والامتحانات */
 .olds {
   max-width: 700px;
-  margin: 20px auto;
-}
-
-/* شيل النقاط من القائمة */
-.olds ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 30px auto;
   display: flex;
-  flex-direction: column; /* العناصر كلها تحت بعض */
-  gap: 20px; /* مسافة بين كل عنصر */
+  flex-direction: column; /* يخلي العناصر تحت بعض */
+  gap: 20px; /* مسافة بين الكروت */
+}
+
+/* الكارت */
+.olds .item {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* العناوين */
-.olds h1 {
+.olds .item h1 {
   font-size: 2rem;
-  margin: 10px 0;
+  margin-bottom: 10px;
+  color: #2c3e50;
 }
 
-/* اللينكات */
-.olds a {
+.olds .item a {
   font-size: 1.3rem;
-  display: block;       /* يخلي اللينك في سطر كامل */
-  margin: 5px auto;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #3498db;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.olds .item a:hover {
+  background: #2980b9;
 }
