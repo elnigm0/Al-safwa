@@ -1226,60 +1226,32 @@ h1 {
 ==========End books==========
 =============================
 */
-/* الكتب والامتحانات */
+/* حاوية الكتب والامتحانات */
 .olds {
+  max-width: 700px;
   margin: 20px auto;
-  max-width: 800px; /* عرض مناسب للشاشات */
-  text-align: center;
 }
 
+/* شيل النقاط من القائمة */
 .olds ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column; /* العناصر كلها تحت بعض */
+  gap: 20px; /* مسافة بين كل عنصر */
+  text-align: center;
 }
 
-.olds li {
-  margin: 20px 0; /* مسافة بين العناصر */
-}
-
+/* العناوين */
 .olds h1 {
-  font-size: 2rem; /* حجم افتراضي */
+  font-size: 2rem;
+  margin: 10px 0;
 }
 
+/* اللينكات */
 .olds a {
   font-size: 1.3rem;
-  display: block;  /* يخلي اللينك تحت العنوان */
-  margin-top: 10px;
+  display: block;       /* يخلي اللينك في سطر كامل */
+  margin: 5px auto;
 }
-
-/* للشاشات الكبيرة (تلفزيون) */
-@media screen and (min-width: 1200px) {
-  .olds h1 {
-    font-size: 2.5rem;
-  }
-  .olds a {
-    font-size: 1.7rem;
-  }
-}
-
-/* للتابلت */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .olds h1 {
-    font-size: 2.2rem;
-  }
-  .olds a {
-    font-size: 1.5rem;
-  }
-}
-
-/* للموبايل */
-@media screen and (max-width: 767px) {
-  .olds h1 {
-    font-size: 1.5rem;
-  }
-  .olds a {
-    font-size: 1.2rem;
-  }
-}
-  
