@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="Xcmi0engG1c1WS3iVAgjZfXmtJyIRPwJMIAppy7hKnY" />
+
+  <!-- Social Media -->
+  <link rel="me" href="#">
+  <link rel="me" href="https://chat.whatsapp.com/CqsjG4lgD4T3DxHKad4JRt">
+  <link rel="me" href="https://youtube.com/channel/UCFWkDYoE-_g01p72oh-5I1g?si=CytEEOjan8PF9EdG">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="سنتر الصفوة التعليمي">
+  <meta property="og:description" content="سنتر الصفوة التعليمي">
+  <meta property="og:image" content="https://elnigm0.github.io/Al-safwa/logo.png">
+  <meta property="og:url" content="https://elnigm0.github.io/Al-safwa/">
+  <meta property="og:type" content="website">
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://elnigm0.github.io/Al-safwa/sitemap.xml">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Style & Favicon -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png">
+
+  <title>سنتر الصفوة التعليمي</title>
+</head>
+
+<body dir="rtl" bgcolor="#f2f2f2" style="margin: 30px;">
+
+<div class="homes">
+      
+<a href="index.html"><i class="fas fa-home" style="background:red; padding: 10px; color: #fff; border-radius:10px;"> الرئيسية</i></a>
+   
+   <h1 style="text-align:center; background:#c0c0c0;">امتحانات الصف الرابع ICT</h1>
+   
+</div>
+
+<!--
+=============================
+=========Start Log in========
+=============================
+-->
+<div class="login_in">
+      <h2>تسجيل الدخول للامتحان</h2>
+
+
+  <div id="login">
+    <label>الاسم الرباعي:</label>
+<br>    
+    <input type="text" id="studentName" placeholder="أكتب الاسم رباعي" required>
+<br>
+    <label>كود الطالب (من A12345 إلى A67890):</label>
+<br>    
+    <input type="text" id="studentCode" placeholder="اكتب الكود" required>
+<br>
+    <button onclick="startExam()">ابدأ الامتحان</button>
+    <p id="loginError" style="color: red;"></p>
+  </div>
+</div>  
+<!--
+=============================
+==========End Log in=========
+=============================
+-->
+
+
+
+
+
+<!--
+=============================
+==========Start Test=========
+=============================
+-->
+
+
+<!-- Start Question -->
+  <div id="exam" class="hidden">
+    <h3>1- The focus of words in writing reports</h3>
+    <input type="radio" name="q1" value="Word"> Word<br>
+    <input type="radio" name="q1" value="Excel"> Excel<br>
+    <input type="radio" name="q1" value="PowerPoint"> PowerPoint<br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>2- arithmetic tables</h3>
+    <input type="radio" name="q2" value="Word"> Word<br>
+    <input type="radio" name="q2" value="Excel"> Excel<br>
+    <input type="radio" name="q2" value="PowerPoint"> PowerPoint<br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>3- Presentations View Research Results</h3>
+    <input type="radio" name="q3" value="Word"> Word<br>
+    <input type="radio" name="q3" value="Excel"> Excel<br>
+    <input type="radio" name="q3" value="PowerPoint"> PowerPoint<br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+
+<!-- Start Question -->
+    <h3>4- Live interviews and contacts</h3>
+    <input type="radio" name="q4" value="WhatsApp"> WhatsApp<br>
+    <input type="radio" name="q4" value="Zoom"> Zoom<br><br>
+    <input type="radio" name="q4" value="WhatsApp_and_Zoom">WhatsApp and Zoom<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+
+<!-- Start Question -->
+    <h3>5- The Router</h3>
+    <input type="radio" name="q5" value="Wifi"> Wifi<br>
+    <input type="radio" name="q5" value="HDMI"> HDMI<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+
+<!-- Start Question -->
+    <h3>6- Cable Voice and Videos</h3>
+    <input type="radio" name="q6" value="HDMI"> HDMI<br>
+    <input type="radio" name="q6" value="Router"> Router<br><br>
+    <input type="radio" name="q6" value="Flash memory"> Flash memory 
+<!-- End Question -->
+
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>7- Storage devices</h3>
+    <input type="radio" name="q7" value="Flash memory"> Flash memory<br>
+    <input type="radio" name="q7" value="Hard Drive"> Hard Drive<br><br>
+    <input type="radio" name="q7" value="Flash_memory_and_Hard_Drive"> Flash memory and Hard Drive<br><br>
+<!-- End Question -->
+
+
+<hr class="elegant-hr">
+
+
+<!-- Start Question -->
+    <h3>8- World Wide Web</h3>
+    <input type="radio" name="q8" value="WWW"> WWW<br>
+    <input type="radio" name="q8" value="WNM">WNM<br><br>
+    <input type="radio" name="q8" value="KLO">KLO<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>9- local network</h3>
+    <input type="radio" name="q9" value="LAN"> LAN<br>
+    <input type="radio" name="q9" value="DNS"> DNS<br><br>
+    <input type="radio" name="q9" value="Nothing"> Nothing<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>10- (-) , (/) ,(+)</h3>
+    <input type="radio" name="q10" value="Cells"> Cells<br>
+    <input type="radio" name="q10" value="Sort">Sort<br><br>
+    <input type="radio" name="q10" value="Data"> Data<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!--(((((( True  or False ))))))-->
+
+
+<!-- Start Question -->
+    <h3>11- bit < byte</h3>
+    <input type="radio" name="q11" value="True"> True 
+    <input type="radio" name="q11" value="False"> False 
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>12- bit > KB </h3>
+    <input type="radio" name="q12" value="True"> True<br>
+    <input type="radio" name="q12" value="False"> False<br><br>
+<!-- End Question -->
+
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>13- KB = 1024B </h3>
+    <input type="radio" name="q13" value="True"> True
+    <input type="radio" name="q13" value="False"> False<br><br>
+<!-- End Question -->
+
+
+<hr class="elegant-hr">
+
+<!-- Start Question -->
+    <h3>14- TB = 1024GB</h3>
+    <input type="radio" name="q14" value="True"> True<br>
+    <input type="radio" name="q14" value="False"> False<br><br>
+<!-- End Question -->
+
+<hr class="elegant-hr">
+
+
+<!-- Start Question -->
+    <h3>15- GB = 1024bit </h3>
+    <input type="radio" name="q15" value="True"> True<br>
+    <input type="radio" name="q15" value="False"> False<br><br>
+<!-- End Question -->
+
+
+
+
+
+    <button onclick="submitExam()">إنهاء الامتحان</button>
+  </div>
+
+  <div id="result" class="hidden"></div>
+<!--
+=============================
+===========End Test==========
+=============================
+-->
+
+  <script src="five_ict.js"></script>
+</body>
+</html>
