@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://elnigm0.github.io/Al-safwa/</loc>
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://elnigm0.github.io/Al-safwa/index.html</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- الصفحة open_1 -->
+  <url>
+    <loc>https://elnigm0.github.io/Al-safwa/open_1.html</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحة tester -->
+  <url>
+    <loc>https://elnigm0.github.io/Al-safwa/tester.html</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    
+    
     <lastmod>2025-06-23</lastmod>
   </url>
 </urlset>
