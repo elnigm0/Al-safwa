@@ -1,18 +1,12 @@
 /**
  * Al Safwa Educational Center - Modern Tech Announcement
- * Version: 2.1 (GitHub Pages Compatible)
+ * Version: 2.2 (Final Guaranteed Version)
  */
 
 (() => {
-  // تم تعديل التحقق ليعمل على GitHub Pages وأي مسار فرعي
-  const isHomePage = 
-    location.pathname === "/" || 
-    location.pathname.endsWith("index.html") || 
-    location.pathname.split("/").pop() === ""; // يغطي حالات GitHub Pages
-
-  if (!isHomePage) return;
-
-  // --- 1. نظام التنسيق (CSS) ---
+  // تم إلغاء فحص المسار (Pathname) لضمان العمل على GitHub Pages في كل الظروف
+  
+  // 1. نظام التنسيق (CSS)
   const styleTag = document.createElement("style");
   styleTag.innerHTML = `
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
@@ -75,7 +69,7 @@
   `;
   document.head.appendChild(styleTag);
 
-  // --- 2. بناء الهيكل (DOM) ---
+  // 2. بناء الهيكل (DOM)
   const overlay = document.createElement("div");
   overlay.className = "alsafwa-overlay";
 
@@ -101,14 +95,14 @@
     </div>
   `;
 
-  overlay.appendChild(card);
   document.body.appendChild(overlay);
+  overlay.appendChild(card);
 
-  // --- 3. الحركة والتشغيل ---
+  // 3. الحركة والتشغيل
   setTimeout(() => {
     overlay.style.opacity = "1";
     card.style.transform = "scale(1) translateY(0)";
-  }, 100);
+  }, 300); // تأخير بسيط لضمان تحميل الـ DOM
 
   const hide = () => {
     overlay.style.opacity = "0";
