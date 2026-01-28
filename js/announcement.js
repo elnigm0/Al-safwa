@@ -1,12 +1,11 @@
-// Ultra-Modern Tech Announcement – Al Safwa
+// Ultra-Modern Tech Announcement – Al Safwa (Show on Every Refresh)
 (() => {
   const isIndex = location.pathname.endsWith("index.html") || location.pathname === "/";
   if (!isIndex) return;
 
-  if (sessionStorage.getItem("alsafwa_modern_announcement")) return;
-  sessionStorage.setItem("alsafwa_modern_announcement", "shown");
+  // تم إزالة قيود الـ Session لكي يظهر الإعلان في كل مرة يتم فيها تحديث الصفحة
 
-  // 1. نظام الألوان والخطوط
+  // 1. نظام الألوان والخطوط (CSS)
   const styleTag = document.createElement("style");
   styleTag.innerHTML = `
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
@@ -29,12 +28,6 @@
       background: #0f172a; border-radius: 21px; padding: 40px 30px;
       text-align: center; font-family: 'Cairo', sans-serif; overflow: hidden;
       position: relative; color: #f8fafc;
-    }
-
-    .alsafwa-inner::before {
-      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-      pointer-events: none;
     }
 
     .tech-badge {
@@ -72,7 +65,7 @@
   `;
   document.head.appendChild(styleTag);
 
-  // 2. بناء الهيكل
+  // 2. بناء الهيكل (HTML)
   const overlay = document.createElement("div");
   overlay.className = "alsafwa-overlay";
 
@@ -90,14 +83,14 @@
       
       <p class="alsafwa-text">
         بقيادة الأستاذ <span class="highlight">محمد السيد جابر</span>،<br>
-        نعلن بكل فخر عن إقامة حفل المتفوقين <br>
-        <span style="font-size:14px; opacity:0.8">تكريم المتفوقين والأساتذة والمشرفين وكل القائمين على النجاح </span>
+        نعلن بكل فخر عن إقامة حفل المتفوقين السنوي.<br>
+        <span style="font-size:14px; opacity:0.8">نحتفي بالتميز.. ونصنع المستقبل برؤية تكنولوجية.</span>
       </p>
 
       <button class="close-btn" id="closeAnnounce">استكشاف المزيد</button>
 
       <div style="margin-top:25px; font-size:10px; color:#475569; letter-spacing:1px; font-family:monospace;">
-        SYSTEM DESIGNED BY:  المهندس محمد عصام 
+        SYSTEM DESIGNED BY: ENG. MOHAMED ESSAM
       </div>
     </div>
   `;
@@ -119,6 +112,6 @@
 
   document.getElementById("closeAnnounce").onclick = closePopup;
 
-  // إغلاق تلقائي بعد 12 ثانية ليعطي وقت للقراءة
+  // إغلاق تلقائي بعد 12 ثانية
   setTimeout(closePopup, 12000);
 })();
