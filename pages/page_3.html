@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المرحلة الإعدادية - الصفوف 1 و 2 و 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/page_3.css">
+</head>
+<body class="prep-theme">
+
+    <header class="page-header">
+        <div class="page-container header-flex">
+            <a href="../index.html#stages" class="back-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>الرئيسية</span>
+            </a>
+            <div class="page-title-area">
+                <h1 class="page-main-title">المرحلة الإعدادية</h1>
+                <span class="page-subtitle">شروحات قوية واختبارات قياسية متطورة ⚡</span>
+            </div>
+            <div class="header-decor">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="tabs-section">
+        <div class="page-container">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-target="prep1">الأول الإعدادي</button>
+                <button class="tab-btn" data-target="prep2">الثاني الإعدادي</button>
+                <button class="tab-btn" data-target="prep3">الثالث الإعدادي (الشهادة)</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="page-container main-content">
+
+        <!-- ================= الأول الإعدادي ================= -->
+        <section id="prep1" class="content-panel active">
+            <div class="split-section">
+                <div class="explanation-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-video"></i> حصص الشرح المرئية</h2>
+                    <div class="lectures-grid">
+                        <div class="lecture-card">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="علوم أولى اعدادي">
+                                <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="lecture-body">
+                                <h3>العلوم: المادة وتركيبها</h3>
+                                <p>دراسة شيقة للذرات، الجزيئات، والعناصر الكيميائية التي يتكون منها الكون من حولنا.</p>
+                                <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">بدء الحصّة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exams-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-award"></i> بنك الاختبارات والمتابعة</h2>
+                    <div class="exam-card">
+                        <div class="exam-header-icon"><i class="fa-solid fa-cube"></i></div>
+                        <div class="exam-body">
+                            <h3>اختبار تحديد المستوى الدوري</h3>
+                            <p>أثبت جدارتك الآن وحل الامتحان التحضيري لتشجيعك في السنتر.</p>
+                            <a href="../test/test_3.html" class="btn btn-secondary btn-sm w-100">
+                                <i class="fa-solid fa-graduation-cap"></i> دخول قاعة الاختبار
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= الثاني الإعدادي ================= -->
+        <section id="prep2" class="content-panel">
+            <div class="split-section">
+                <div class="explanation-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-video"></i> حصص الشرح المرئية</h2>
+                    <div class="lectures-grid">
+                        <div class="lecture-card">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=600&q=80" alt="English prep 2">
+                                <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="lecture-body">
+                                <h3>English: Unit 1 grammar</h3>
+                                <p>تبسيط كامل وممتع لقواعد زمن المضارع البسيط والماضي المستمر مع حل تدريبات ممتازة.</p>
+                                <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">بدء الحصّة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exams-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-award"></i> بنك الاختبارات والمتابعة</h2>
+                    <div class="exam-card">
+                        <div class="exam-header-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="exam-body">
+                            <h3>اختبار القواعد الشامل (صف ثانٍ)</h3>
+                            <p>قيّم فهمك الفوري للقواعد اللغوية لتجنب الأخطاء في الامتحان النهائي.</p>
+                            <a href="../test/test_3.html" class="btn btn-secondary btn-sm w-100">
+                                <i class="fa-solid fa-graduation-cap"></i> دخول قاعة الاختبار
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= الثالث الإعدادي ================= -->
+        <section id="prep3" class="content-panel">
+            <div class="split-section">
+                <div class="explanation-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-video"></i> حصص الشرح المرئية</h2>
+                    <div class="lectures-grid">
+                        <div class="lecture-card">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" alt="الرياضيات لثالثة">
+                                <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="lecture-body">
+                                <h3>الرياضيات: حساب المثلثات</h3>
+                                <p>شرح تفصيلي للنسب المثلثية الأساسية للزاوية الحادة وأسرار الحل السريع للمسائل المعقدة.</p>
+                                <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">بدء الحصّة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exams-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-award"></i> بنك الاختبارات والمتابعة</h2>
+                    <div class="exam-card">
+                        <div class="exam-header-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="exam-body">
+                            <h3>محاكاة الامتحان الوزاري الموحد 2026</h3>
+                            <p>امتحان شامل ومطابق تماماً لمواصفات وزارة التربية والتعليم للشهادة الإعدادية.</p>
+                            <a href="../test/test_3.html" class="btn btn-secondary btn-sm w-100">
+                                <i class="fa-solid fa-graduation-cap"></i> دخول قاعة الاختبار
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideo()">&times;</span>
+            <div class="iframe-container">
+                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <div class="page-container">
+            <p>© 2026 جميع الحقوق محفوظة لسنتر المتفوقين للمرحلة الإعدادية.</p>
+            <a href="../index.html" class="footer-back-link"><i class="fa-solid fa-house"></i> العودة للرئيسية</a>
+        </div>
+    </footer>
+
+    <script src="../js/page_3.js"></script>
+</body>
+</html>

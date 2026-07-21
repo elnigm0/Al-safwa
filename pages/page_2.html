@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المرحلة الابتدائية - الصفوف 4 و 5 و 6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/page_2.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <div class="page-container header-flex">
+            <a href="../index.html#stages" class="back-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>الرئيسية</span>
+            </a>
+            <div class="page-title-area">
+                <h1 class="page-main-title">المرحلة الابتدائية</h1>
+                <span class="page-subtitle">دروس مبسطة لغد أفضل 🌟</span>
+            </div>
+            <div class="header-decor">
+                <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- تبويبات الصفوف -->
+    <section class="tabs-section">
+        <div class="page-container">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-target="grade4">الرابع الابتدائي</button>
+                <button class="tab-btn" data-target="grade5">الخامس الابتدائي</button>
+                <button class="tab-btn" data-target="grade6">السادس الابتدائي</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="page-container main-content">
+
+        <!-- ================= الصف الرابع ================= -->
+        <section id="grade4" class="content-panel active">
+            <div class="split-section">
+                <!-- قسم الشرح -->
+                <div class="explanation-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-play"></i> الشرح والمحاضرات</h2>
+                    <div class="lectures-grid">
+                        <div class="lecture-card">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="علوم رابعة">
+                                <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="lecture-body">
+                                <h3>العلوم: التكيف والبقاء</h3>
+                                <p>كيف تتكيف الحيوانات مع البيئة المحيطة بها من أجل البقاء على قيد الحياة.</p>
+                                <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">مشاهدة الدرس</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الامتحانات -->
+                <div class="exams-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-file-pen"></i> الاختبارات والتقييمات</h2>
+                    <div class="exam-card">
+                        <div class="exam-header-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                        <div class="exam-body">
+                            <h3>اختبار شهر أكتوبر الموحد</h3>
+                            <p>اختبر مهاراتك الآن في منهج العلوم والرياضيات لشهر أكتوبر.</p>
+                            <a href="../test/test_2.html" class="btn btn-secondary btn-sm w-100">
+                                <i class="fa-solid fa-right-to-bracket"></i> دخول الامتحان الإلكتروني
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= الصف الخامس (نفس الهيكلية) ================= -->
+        <section id="grade5" class="content-panel">
+            <div class="split-section">
+                <div class="explanation-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-play"></i> الشرح والمحاضرات</h2>
+                    <div class="lectures-grid">
+                        <div class="lecture-card">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="رياضيات خامسة">
+                                <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="lecture-body">
+                                <h3>الرياضيات: الكسور العشرية</h3>
+                                <p>شرح رائع وسهل لجمع وطرح الكسور العشرية وتطبيقاتها الحياتية.</p>
+                                <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">مشاهدة الدرس</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exams-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-file-pen"></i> الاختبارات والتقييمات</h2>
+                    <div class="exam-card">
+                        <div class="exam-header-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div class="exam-body">
+                            <h3>اختبار الفصل الدراسي الأول</h3>
+                            <p>تقييم شامل ومحاكي لورقة الامتحان الرسمية لضمان التفوق والدرجة النهائية.</p>
+                            <a href="../test/test_2.html" class="btn btn-secondary btn-sm w-100">
+                                <i class="fa-solid fa-right-to-bracket"></i> دخول الامتحان الإلكتروني
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= الصف السادس (نفس الهيكلية) ================= -->
+        <section id="grade6" class="content-panel">
+            <div class="split-section">
+                <div class="explanation-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-play"></i> الشرح والمحاضرات</h2>
+                    <div class="lectures-grid">
+                        <div class="lecture-card">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="دراسات سادسة">
+                                <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="lecture-body">
+                                <h3>الدراسات: تاريخ مصر الحديث</h3>
+                                <p>رحلة شيقة عبر التاريخ لاستكشاف أهم المعالم والأحداث التاريخية لمصر.</p>
+                                <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">مشاهدة الدرس</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exams-box">
+                    <h2 class="sub-section-title"><i class="fa-solid fa-file-pen"></i> الاختبارات والتقييمات</h2>
+                    <div class="exam-card">
+                        <div class="exam-header-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="exam-body">
+                            <h3>الاختبار النهائي للشهادة الابتدائية</h3>
+                            <p>بنك أسئلة متكامل ومجيب عنه بالتفصيل والملاحظات الهامة لكل سؤال.</p>
+                            <a href="../test/test_2.html" class="btn btn-secondary btn-sm w-100">
+                                <i class="fa-solid fa-right-to-bracket"></i> دخول الامتحان الإلكتروني
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideo()">&times;</span>
+            <div class="iframe-container">
+                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <div class="page-container">
+            <p>© 2026 جميع الحقوق محفوظة لسنتر التميز الابتدائي.</p>
+            <a href="../index.html" class="footer-back-link"><i class="fa-solid fa-house"></i> العودة للرئيسية</a>
+        </div>
+    </footer>
+
+    <script src="../js/page_2.js"></script>
+</body>
+</html>
