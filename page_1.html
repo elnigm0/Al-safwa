@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحلة رياض الأطفال - KG1 & KG2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/page_1.css">
+</head>
+<body class="kg-theme">
+
+    <!-- الهيدر -->
+    <header class="page-header">
+        <div class="page-container header-flex">
+            <a href="../index.html#stages" class="back-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>الرئيسية</span>
+            </a>
+            <div class="page-title-area">
+                <h1 class="page-main-title">مرحلة رياض الأطفال</h1>
+                <span class="page-subtitle">أهلاً بكم في عالم المرح والتعلم! 🎈</span>
+            </div>
+            <div class="header-decor">
+                <i class="fa-solid fa-face-smile-wink"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- تبويبات الصفوف (KG1 & KG2) -->
+    <section class="tabs-section">
+        <div class="page-container">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-target="kg1-section">
+                    <i class="fa-solid fa-shapes"></i>
+                    <span>تأسيس KG1</span>
+                </button>
+                <button class="tab-btn" data-target="kg2-section">
+                    <i class="fa-solid fa-palette"></i>
+                    <span>تأسيس KG2</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="page-container main-content">
+
+        <!-- قسم KG1 -->
+        <section id="kg1-section" class="content-panel active">
+            <div class="section-intro">
+                <h2>حكايات وفيديوهات مرحة لـ KG1</h2>
+                <p>تعليم الحروف، الأرقام، والألوان بطريقة تفاعلية ممتعة جداً!</p>
+            </div>
+
+            <div class="lectures-grid">
+                <div class="lecture-card">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80" alt="الحروف العربية">
+                        <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="lecture-body">
+                        <span class="badge">اللغة العربية</span>
+                        <h3>أغنية الحروف الهجائية الممتعة</h3>
+                        <p>هيا نتعلم نطق الحروف العربية بطريقة الغناء والمرح مع حركات اليدين.</p>
+                        <div class="lecture-actions">
+                            <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                <i class="fa-solid fa-video"></i> مشاهدة الأغنية
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lecture-card">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="الأرقام">
+                        <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="lecture-body">
+                        <span class="badge">الحساب</span>
+                        <h3>تعلم العد من 1 إلى 10 بالصور</h3>
+                        <p>درس شيق يعتمد على عد الفواكه والحيوانات اللطيفة لتنمية المهارات البصرية للطفل.</p>
+                        <div class="lecture-actions">
+                            <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                <i class="fa-solid fa-video"></i> مشاهدة الدرس
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم KG2 -->
+        <section id="kg2-section" class="content-panel">
+            <div class="section-intro">
+                <h2>أنشطة ودروس لـ KG2</h2>
+                <p>مرحلة القراءة البسيطة، الكلمات الإنجليزية التأسيسية، والعمليات الحسابية الخفيفة.</p>
+            </div>
+
+            <div class="lectures-grid">
+                <div class="lecture-card">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="English">
+                        <button class="play-overlay-btn" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="lecture-body">
+                        <span class="badge">English</span>
+                        <h3>Phonics & Letter Sounds</h3>
+                        <p>طريقة نطق الحروف الإنجليزية بشكل صحيح لتأسيس الطفل على القراءة السليمة للكتابة.</p>
+                        <div class="lecture-actions">
+                            <button class="btn btn-primary btn-sm w-100" onclick="openVideo('https://www.youtube.com/embed/tgbNymZ7vqY')">
+                                <i class="fa-solid fa-video"></i> Watch Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- مودال الفيديو -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideo()">&times;</span>
+            <div class="iframe-container">
+                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <div class="page-container">
+            <p>© 2026 روضة التميز والإبداع للطفل.</p>
+            <a href="../index.html" class="footer-back-link"><i class="fa-solid fa-house"></i> العودة للرئيسية</a>
+        </div>
+    </footer>
+
+    <script src="../js/page_1.js"></script>
+</body>
+</html>
