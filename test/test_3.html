@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الامتحانات الإلكترونية للمرحلة الإعدادية</title>
+    <!-- خط Cairo المميز -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           1. التنسيقات الأساسية والمتغيرات (البنفسجي الإعدادي المبهج والراقي)
+           ========================================================================== */
+        :root {
+            --primary: #8e44ad;
+            --primary-light: #a55eea;
+            --primary-dark: #2c3e50;
+            --secondary: #f1c40f;
+            --bg-light: #f6f5fa;
+            --white: #ffffff;
+            --text-dark: #2d3436;
+            --text-muted: #7f8c8d;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --shadow: 0 8px 24px rgba(142, 68, 173, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            flex-grow: 1;
+        }
+
+        /* زر الرجوع للخلف المنسق */
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateX(3px);
+        }
+
+        /* ==========================================================================
+           2. كرت بوابة التسجيل ودخول الامتحان
+           ========================================================================== */
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary);
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .card-header i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card-header h2 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 8px rgba(142, 68, 173, 0.15);
+        }
+
+        /* تنبيهات الخطأ والملاحظات */
+        .alert {
+            background-color: #fff5f5;
+            color: var(--danger);
+            border: 1px solid #fed7d7;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           3. واجهة الامتحان الفعلي
+           ========================================================================== */
+        #exam-workspace {
+            display: none;
+        }
+
+        .student-badge-info {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-item {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .info-item span {
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        /* أسئلة الامتحان */
+        .question-box {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid #f1f2f6;
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .options-list {
+            list-style: none;
+        }
+
+        .option-item {
+            margin-bottom: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid #e9ecef;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .option-label:hover {
+            background-color: rgba(142, 68, 173, 0.05);
+            border-color: var(--primary-light);
+        }
+
+        .option-label input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* زر الإرسال */
+        .btn-finish {
+            background-color: var(--success);
+            color: var(--white);
+        }
+
+        .btn-finish:hover {
+            background-color: #27ae60;
+        }
+
+        /* الفوتر البسيط */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .student-badge-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- زر العودة للمرحلة الإعدادية -->
+        <div class="back-nav">
+            <a href="../pages/page_3.html" class="back-link">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>الرجوع للمرحلة الإعدادية</span>
+            </a>
+        </div>
+
+        <!-- ================= بوابة الدخول والتسجيل ================= -->
+        <section id="login-panel" class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>بوابة الدخول للاختبار الإلكتروني</h2>
+            </div>
+
+            <!-- رسالة الخطأ والدعم الذكي -->
+            <div id="error-alert" class="alert">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span id="error-message">البيانات غير صحيحة!</span>
+            </div>
+
+            <form id="loginForm" onsubmit="handleRegistration(event)">
+                <!-- حقل الاسم الرباعي -->
+                <div class="form-group">
+                    <label for="studentName"><i class="fa-solid fa-user"></i> اسم الطالب (رباعي بالكامل):</label>
+                    <input type="text" id="studentName" class="form-control" placeholder="اكتب اسمك رباعي باللغة العربية" required autocomplete="off">
+                </div>
+
+                <!-- حقل كود الطالب (بدون أي مثال لمنع التطفل) -->
+                <div class="form-group">
+                    <label for="studentCode"><i class="fa-solid fa-key"></i> كود الطالب الخاص بك:</label>
+                    <input type="text" id="studentCode" class="form-control" placeholder="أدخل الكود الخاص بك هنا" required autocomplete="off" style="text-transform: uppercase;">
+                </div>
+
+                <!-- حقل اختيار المادة -->
+                <div class="form-group">
+                    <label for="subjectSelect"><i class="fa-solid fa-book"></i> اختر المادة الدراسية والصف:</label>
+                    <select id="subjectSelect" class="form-control" required>
+                        <option value="" disabled selected>-- اختر من هنا بالتفصيل --</option>
+                        
+                        <!-- الأول الإعدادي -->
+                        <option value="1-عربي">الصف الأول الإعدادي - اللغة العربية</option>
+                        <option value="1-إنجليزي">الصف الأول الإعدادي - اللغة الإنجليزية</option>
+                        <option value="1-علوم">الصف الأول الإعدادي - العلوم</option>
+                        <option value="1-رياضيات">الصف الأول الإعدادي - الرياضيات</option>
+                        <option value="1-دراسات">الصف الأول الإعدادي - الدراسات الاجتماعية</option>
+                        
+                        <!-- الثاني الإعدادي -->
+                        <option value="2-عربي">الصف الثاني الإعدادي - اللغة العربية</option>
+                        <option value="2-إنجليزي">الصف الثاني الإعدادي - اللغة الإنجليزية</option>
+                        <option value="2-علوم">الصف الثاني الإعدادي - العلوم</option>
+                        <option value="2-رياضيات">الصف الثاني الإعدادي - الرياضيات</option>
+                        <option value="2-دراسات">الصف الثاني الإعدادي - الدراسات الاجتماعية</option>
+                        
+                        <!-- الثالث الإعدادي -->
+                        <option value="3-عربي">الصف الثالث الإعدادي - اللغة العربية</option>
+                        <option value="3-إنجليزي">الصف الثالث الإعدادي - اللغة الإنجليزية</option>
+                        <option value="3-علوم">الصف الثالث الإعدادي - العلوم</option>
+                        <option value="3-رياضيات">الصف الثالث الإعدادي - الرياضيات</option>
+                        <option value="3-دراسات">الصف الثالث الإعدادي - الدراسات الاجتماعية</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fa-solid fa-rocket"></i> تسجيل ودخول قاعة الامتحان
+                </button>
+            </form>
+        </section>
+
+
+        <!-- ================= قاعة الامتحان الفعلي (تظهر بعد التسجيل السليم) ================= -->
+        <section id="exam-workspace">
+            <!-- كرت البيانات التعريفية للطالب -->
+            <div class="student-badge-info">
+                <div class="info-item"><i class="fa-solid fa-user"></i> الطالب: <span id="badge-name">--</span></div>
+                <div class="info-item"><i class="fa-solid fa-id-badge"></i> الكود: <span id="badge-code">--</span></div>
+                <div class="info-item"><i class="fa-solid fa-school"></i> الصف الدراسي: <span id="badge-grade">--</span></div>
+                <div class="info-item"><i class="fa-solid fa-book"></i> المادة المقررة: <span id="badge-subject">--</span></div>
+            </div>
+
+            <!-- حاوية الأسئلة -->
+            <form id="examForm" onsubmit="submitExam(event)">
+                <div id="questions-container">
+                    <!-- تُولد الأسئلة هنا عبر الـ JS -->
+                </div>
+
+                <button type="submit" class="btn-submit btn-finish">
+                    <i class="fa-solid fa-circle-check"></i> إنهاء وإرسال النتيجة فوراً للواتس
+                </button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 جميع الحقوق محفوظة لسنتر المتفوقين للمرحلة الإعدادية.</p>
+    </footer>
+
+    <script>
+        // ==========================================================================
+        // 1. قواعد البيانات (الأكواد المعتمدة)
+        // ==========================================================================
+        const CODES_1 = [
+            "AA482915", "AA731084", "AA159372", "AA604817", "AA928451", 
+            "AA310695", "AA745218", "AA863904", "AA217536", "AA594183", 
+            "AA806741", "AA471259", "AA932608", "AA128754", "AA657391", 
+            "AA349862", "AA714905", "AA280643", "AA596027", "AA843176", 
+            "AA905284", "AA462730", "AA187459", "AA738516", "AA624801", 
+            "AA351972", "AA970413", "AA518246", "AA246895", "AA801357"
+        ];
+
+        const CODES_2 = [
+            "BB639182", "BB415706", "BB928350", "BB174893", "BB582641", 
+            "BB760914", "BB391527", "BB845230", "BB206718", "BB973461", 
+            "BB158924", "BB624385", "BB407193", "BB891256", "BB532870", 
+            "BB718405", "BB265941", "BB984617", "BB340528", "BB671839", 
+            "BB159640", "BB806352", "BB493781", "BB275106", "BB937418", 
+            "BB561824", "BB120759", "BB748963", "BB384215", "BB692570"
+        ];
+
+        const CODES_3 = [
+            "CC547812", "CC830691", "CC194375", "CC761204", "CC428953", 
+            "CC915486", "CC302871", "CC684125", "CC150937", "CC893614", 
+            "CC471258", "CC726540", "CC315869", "CC982743", "CC640185", 
+            "CC257931", "CC814620", "CC569174", "CC130482", "CC758396", 
+            "CC946201", "CC381725", "CC627849", "CC504318", "CC172960", 
+            "CC835417", "CC290684", "CC713952", "CC468105", "CC951273"
+        ];
+
+        // ==========================================================================
+        // 2. بنك الأسئلة الشامل لجميع المواد الدراسية الأساسية
+        // ==========================================================================
+        const QUESTIONS_BANK = {
+            // ----- الصف الأول الإعدادي -----
+            "1-عربي": [
+                { q: "ما مرادف كلمة 'يرقّ' في جملة 'يرق قلبه للفقير'؟", options: ["يقسو", "يحن ويعطف", "يغضب", "يتجاهل"], correct: 1 },
+                { q: "نوع الخبر في جملة 'التعليم مفيد للبشرية' هو خبر:", options: ["جملة اسمية", "مفرد", "شبه جملة", "جملة فعلية"], correct: 1 },
+                { q: "مضاد كلمة 'التواضع':", options: ["الأمانة", "الصدق", "التكبر", "الوفاء"], correct: 2 },
+                { q: "الفعل 'كتب' هو فعل:", options: ["معتل", "صحيح سالم", "صحيح مهموز", "صحيح مضاعف"], correct: 1 },
+                { q: "من كتب قصيدة 'عشقناك يا مصر'؟", options: ["حافظ إبراهيم", "فاروق جويدة", "أحمد شوقي", "إيليا أبو ماضي"], correct: 1 }
+            ],
+            "1-إنجليزي": [
+                { q: "Ali is very good at football. He plays ... every Friday.", options: ["it", "them", "him", "her"], correct: 0 },
+                { q: "My father's brother is my ...", options: ["uncle", "aunt", "cousin", "grandfather"], correct: 0 },
+                { q: "They ... like watching horror movies.", options: ["doesn't", "don't", "isn't", "aren't"], correct: 1 },
+                { q: "A ... is a place where we can read and borrow books.", options: ["playground", "library", "classroom", "hospital"], correct: 1 },
+                { q: "She went to the beach ... last week.", options: ["ago", "yesterday", "since", "on"], correct: 1 }
+            ],
+            "1-علوم": [
+                { q: "وحدة قياس الكثافة هي:", options: ["جم/سم³", "سم", "جم", "كجم"], correct: 0 },
+                { q: "من الثدييات عديمة الأسنان:", options: ["الأسد", "المدرع", "القنفذ", "الأرنب"], correct: 1 },
+                { q: "رمز عنصر الصوديوم هو:", options: ["S", "N", "Na", "Cl"], correct: 2 },
+                { q: "يتكون جزيء الماء من ارتباط ذرة أكسجين مع ذرتين من:", options: ["النيتروجين", "الهيدروجين", "الكربون", "الكلور"], correct: 1 },
+                { q: "تتحول الطاقة الميكانيكية إلى طاقة كهربائية في المولد باستخدام:", options: ["الدينامو", "المصباح", "البطارية", "المدفأة"], correct: 0 }
+            ],
+            "1-رياضيات": [
+                { q: "المعكوس الجمعي للعدد -3 هو:", options: ["-3", "3", "1/3", "-1/3"], correct: 1 },
+                { q: "الحد الجبري 3س² ص من الدرجة:", options: ["الأولى", "الثانية", "الثالثة", "الرابعة"], correct: 2 },
+                { q: "مجموع قياسات زوايا المثلث الداخلة تساوي:", options: ["90°", "180°", "360°", "270°"], correct: 1 },
+                { q: "المنوال للقيم 5، 3، 5، 7، 5 هو:", options: ["3", "5", "7", "25"], correct: 1 },
+                { q: "الزاويتان المتتامتان مجموع قياسهما:", options: ["180°", "90°", "360°", "45°"], correct: 1 }
+            ],
+            "1-دراسات": [
+                { q: "أكبر قارات العالم مساحة هي قارة:", options: ["أفريقيا", "آسيا", "أوروبا", "أستراليا"], correct: 1 },
+                { q: "يعد كوكب ... توأماً لكوكب الأرض لتشافههما في القطر والكتلة:", options: ["عطارد", "المريخ", "الزهرة", "المشترى"], correct: 2 },
+                { q: "مؤسس الأسرة الفرعونية الثالثة وباني هرم سقارة المدرج هو الملك:", options: ["خوفو", "زوسر", "مينا", "سنفرو"], correct: 1 },
+                { q: "عاصمة مملكة الجنوب عند القدماء المصريين هي مدينة:", options: ["نخب", "بوتو", "طيبة", "منف"], correct: 0 },
+                { q: "تتعامد الشمس في فصل الصيف بالجنوب (نصف الكرة الجنوبي) على:", options: ["مدار السرطان", "خط الاستواء", "مدار الجدي", "الدائرة القطبية"], correct: 2 }
+            ],
+
+            // ----- الصف الثاني الإعدادي -----
+            "2-عربي": [
+                { q: "ما مرادف كلمة 'أقوات'؟", options: ["أسلحة", "ملابس", "أطعمة", "أموال"], correct: 2 },
+                { q: "الفعل 'دعا' هو فعل معتل نوعه:", options: ["مثال", "أجوف", "ناقص", "لفيف"], correct: 2 },
+                { q: "مضاد كلمة 'الإخلاص':", options: ["الخيانة", "الكذب", "الرياء", "الجهل"], correct: 2 },
+                { q: "الاسم المبني في الجملة التالية 'هذا ولد نشيط' هو:", options: ["هذا", "ولد", "نشيط", "لا يوجد"], correct: 0 },
+                { q: "قائل نص 'عهد الطفولة' هو الشاعر:", options: ["حافظ إبراهيم", "عبد القادر القصاب", "أحمد شوقي", "إبراهيم ناجي"], correct: 1 }
+            ],
+            "2-إنجليزي": [
+                { q: "He always ... up early on school days.", options: ["get", "gets", "getting", "got"], correct: 1 },
+                { q: "A ... is someone who works for no money to help people.", options: ["doctor", "volunteer", "teacher", "engineer"], correct: 1 },
+                { q: "Are you ... computer games at the moment?", options: ["play", "plays", "playing", "played"], correct: 2 },
+                { q: "The Nile is the longest ... in the world.", options: ["lake", "mountain", "river", "desert"], correct: 2 },
+                { q: "We ... eat too much fast food because it's unhealthy.", options: ["should", "shouldn't", "must", "can"], correct: 1 }
+            ],
+            "2-علوم": [
+                { q: "رتب مندليف العناصر تصاعدياً حسب:", options: ["أعدادها الذرية", "أوزانها الذرية", "حجمها", "درجة الغليان"], correct: 1 },
+                { q: "توجد طبقة الأوزون في:", options: ["التروبوسفير", "الستراتوسفير", "الميزوسفير", "الثرموسفير"], correct: 1 },
+                { q: "الضغط الجوي المعتاد يعادل تقريباً:", options: ["1013.25 مليبار", "76 مليبار", "1200 مليبار", "500 مليبار"], correct: 0 },
+                { q: "تعتبر محمية ... أول محمية طبيعية تم إنشاؤها في مصر:", options: ["وادي الحيتان", "رأس محمد", "سانت كاترين", "الصحراء البيضاء"], correct: 1 },
+                { q: "من الطيور المنقرضة حديثاً بسبب الصيد الجائر:", options: ["طائر الدودو", "النسر الأصلع", "أبو منجل", "الغراب"], correct: 0 }
+            ],
+            "2-رياضيات": [
+                { q: "إذا كان س - ص = 5، و س + ص = 3، فإن س² - ص² تساوي:", options: ["15", "8", "2", "25"], correct: 0 },
+                { q: "طول المتوسط الخارج من رأس القائمة في المثلث القائم الزاوية يساوي ... طول الوتر:", options: ["ربع", "نصف", "ضعف", "ثلث"], correct: 1 },
+                { q: "المثلث الذي أطوال أضلاعه 5 سم، 12 سم، 13 سم يكون:", options: ["منفرج الزاوية", "قائم الزاوية", "حاد الزاوية", "متساوي الأضلاع"], correct: 1 },
+                { q: "الوسيط للقيم 2، 8، 5، 7، 9 هو:", options: ["5", "7", "8", "6"], correct: 1 },
+                { q: "مربع طول قطره 8 سم، تكون مساحته:", options: ["64 سم²", "32 سم²", "16 سم²", "24 سم²"], correct: 1 }
+            ],
+            "2-دراسات": [
+                { q: "يحد الوطن العربي من الغرب:", options: ["المحيط الهندي", "المحيط الأطلنطي", "البحر الأحمر", "جبال زاغروس"], correct: 1 },
+                { q: "من الهضاب البركانية في جنوب غرب شبه الجزيرة العربية هضبة:", options: ["اليمن", "بادية الشام", "نجد", "حضرموت"], correct: 0 },
+                { q: "تأسست الدولة الفاطمية على يد الخليفة المعز لدين الله في بلاد:", options: ["مصر", "المغرب", "الشام", "العراق"], correct: 1 },
+                { q: "انتصر المسلمون على التتار والمغول في معركة:", options: ["عين جالوت", "حطين", "القادسية", "اليرموك"], correct: 0 },
+                { q: "أول عاصمة للدولة العباسية كانت مدينة:", options: ["بغداد", "الكوفة", "الأنبار", "دمشق"], correct: 1 }
+            ],
+
+            // ----- الصف الثالث الإعدادي -----
+            "3-عربي": [
+                { q: "إعراب الاسم المعرف بـ (أل) بعد اسم الإشارة إذا كان هو المشار إليه يعرب:", options: ["نعت", "بدل مطابق", "مضاف إليه", "فاعل"], correct: 1 },
+                { q: "مضاد كلمة 'ينأى' هو:", options: ["يبتعد", "يقترب", "ينام", "يصمت"], correct: 1 },
+                { q: "المنادى في جملة 'يا طالبًا العلم اجتهد' نوعه:", options: ["مضاف", "شبيه بالمضاف", "نكرة غير مقصودة", "علم مفرد"], correct: 1 },
+                { q: "كلمة 'مساجد' ممنوعة من الصرف لأنها على صيغة:", options: ["منتهى الجموع", "علم مؤنث", "صفة على وزن أفعل", "اسم ممدود"], correct: 0 },
+                { q: "قائل نص 'عباد الرحمن' هو:", options: ["أحمد شوقي", "قرآن كريم من سورة الفرقان", "حديث شريف", "إيليا أبو ماضي"], correct: 1 }
+            ],
+            "3-إنجليزي": [
+                { q: "I have lived in Cairo ... 2015.", options: ["for", "since", "ago", "already"], correct: 1 },
+                { q: "A ... is something you can use to make warm drinks like coffee.", options: ["fridge", "kettle", "microwave", "toaster"], correct: 1 },
+                { q: "If we ... hard, we will pass our exams.", options: ["study", "studies", "studied", "studying"], correct: 0 },
+                { q: "The train to Alexandria ... at 8:00 AM tomorrow.", options: ["leave", "leaves", "leaving", "left"], correct: 1 },
+                { q: "He is interested ... reading historical books.", options: ["in", "on", "at", "for"], correct: 0 }
+            ],
+            "3-علوم": [
+                { q: "العاملان اللذان يمكن بهما وصف حركة جسم ما هما:", options: ["السرعة والزمن", "المسافة والزمن", "المسافة والمساحة", "الكتلة والسرعة"], correct: 1 },
+                { q: "مؤسس النظرية الحديثة لتفسير نشأة المجموعة الشمسية هو العالم:", options: ["فريد هيل", "لابلاس", "تشمبرلن", "نيوتن"], correct: 0 },
+                { q: "توضع مرآة ... على جانبي السائق لكشف الطريق خلفه:", options: ["مقعرة", "محدبة", "مستوية", "اسطوانية"], correct: 1 },
+                { q: "يحدث الانقسام الميوزي في خلايا الخصية لإنتاج:", options: ["خلايا جسدية", "حيوانات منوية", "بويضات", "حبوب لقاح"], correct: 1 },
+                { q: "العدسة المقعرة تؤدي دائماً إلى ... الأشعة الضوئية الساقطة عليها:", options: ["تجميع", "تفتيت (تفريق)", "عكس", "امتصاص"], correct: 1 }
+            ],
+            "3-رياضيات": [
+                { q: "إذا كانت (س، 3) = (5، ص) فإن قيمة س + ص تساوي:", options: ["8", "15", "2", "5"], correct: 0 },
+                { q: "ميل الخط المستقيم الموازي لمحور السينات يساوي:", options: ["1", "-1", "صفر", "غير معرف"], correct: 2 },
+                { q: "إذا كانت جا س = 0.5 (حيث س زاوية حادة) فإن س تساوي:", options: ["45°", "30°", "60°", "90°"], correct: 1 },
+                { q: "البعد بين النقطتين (3، 0) و (0، 4) يساوي:", options: ["5", "7", "1", "12"], correct: 0 },
+                { q: "إذا كان المستقيمان ل1، ل2 متوازيين وكان ميل ل1 = 2/3، فإن ميل ل2 يساوي:", options: ["-3/2", "2/3", "-2/3", "3/2"], correct: 1 }
+            ],
+            "3-دراسات": [
+                { q: "تقع هضبة لبرادور في شمال شرق قارة:", options: ["أفريقيا", "أمريكا الشمالية", "أمريكا الجنوبية", "آسيا"], correct: 1 },
+                { q: "من جبال قارة أوروبا التي تفصل بين إسبانيا وفرنسا جبال:", options: ["البرانس", "الألب", "الأورال", "الأطلس"], correct: 0 },
+                { q: "بدأت ثورة القاهرة الأولى ضد الاحتلال الفرنسي من حي:", options: ["الأزهر الشريف", "بولاق", "العباسية", "الحسين"], correct: 0 },
+                { q: "تم إلغاء الامتيازات الأجنبية لمصر بموجب قرارات مؤتمر:", options: ["مونترو", "برلين", "صلح باريس", "لندن"], correct: 0 },
+                { q: "أصدر الرئيس محمد أنور السادات دستور مصر الدائم عام:", options: ["1952", "1971", "1923", "2014"], correct: 1 }
+            ]
+        };
+
+        let currentActiveQuestions = [];
+        let userData = {};
+
+        // ==========================================================================
+        // 3. التسجيل والتحقق الذكي والربط
+        // ==========================================================================
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            const errorAlert = document.getElementById('error-alert');
+            errorAlert.style.display = 'none';
+
+            // 1. تحضير الاسم وتدقيقه رباعياً بالكامل
+            const nameInput = document.getElementById('studentName').value.trim();
+            const words = nameInput.split(/\s+/);
+            if (words.length < 4) {
+                showError("يجب كتابة اسمك رباعياً بالكامل (4 كلمات على الأقل) لضمان تسجيل النتيجة باسمك الصحيح.");
+                return;
+            }
+
+            // 2. تحضير الكود وتحويله لكابيتال تلقائياً
+            const codeInput = document.getElementById('studentCode').value.trim().toUpperCase();
+            document.getElementById('studentCode').value = codeInput; 
+
+            // 3. تحديد الصف من الكود والتحقق من صحته
+            let codeGrade = 0;
+            if (CODES_1.includes(codeInput)) {
+                codeGrade = 1;
+            } else if (CODES_2.includes(codeInput)) {
+                codeGrade = 2;
+            } else if (CODES_3.includes(codeInput)) {
+                codeGrade = 3;
+            } else {
+                showError("عذراً، هذا الكود غير مدرج بقاعدة بيانات السنتر. تأكد من إدخال الكود بشكل دقيق.");
+                return;
+            }
+
+            // 4. فحص المادة المختارة ومطابقتها التامة مع كود الصف
+            const subjectVal = document.getElementById('subjectSelect').value;
+            if (!subjectVal) {
+                showError("من فضلك اختر المادة الدراسية.");
+                return;
+            }
+
+            const selectedGrade = parseInt(subjectVal.split('-')[0]); 
+            const subjectName = subjectVal.split('-')[1];
+
+            if (codeGrade !== selectedGrade) {
+                showError(`عذراً، هذا الكود مخصص لـ (الصف ${getGradeLabel(codeGrade)})، ولا يطابق المادة المحددة لـ (الصف ${getGradeLabel(selectedGrade)}). يرجى مطابقة كود الصف مع المادة المحددة.`);
+                return;
+            }
+
+            // 5. حفظ بيانات الطالب بنجاح والانتقال للامتحان الفعلي
+            userData = {
+                name: nameInput,
+                code: codeInput,
+                grade: getGradeLabel(codeGrade),
+                subject: subjectName,
+                subjectCode: subjectVal
+            };
+
+            startExamSession();
+        }
+
+        function getGradeLabel(num) {
+            if (num === 1) return "الأول الإعدادي";
+            if (num === 2) return "الثاني الإعدادي";
+            if (num === 3) return "الثالث الإعدادي";
+            return "";
+        }
+
+        function showError(msg) {
+            const errorAlert = document.getElementById('error-alert');
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = msg;
+            errorAlert.style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==========================================================================
+        // 4. تشغيل الامتحان ورسم الأسئلة
+        // ==========================================================================
+        function startExamSession() {
+            document.getElementById('login-panel').style.display = 'none';
+            document.getElementById('exam-workspace').style.display = 'block';
+
+            document.getElementById('badge-name').textContent = userData.name;
+            document.getElementById('badge-code').textContent = userData.code;
+            document.getElementById('badge-grade').textContent = userData.grade;
+            document.getElementById('badge-subject').textContent = userData.subject;
+
+            currentActiveQuestions = QUESTIONS_BANK[userData.subjectCode] || [];
+            
+            const qContainer = document.getElementById('questions-container');
+            qContainer.innerHTML = '';
+
+            currentActiveQuestions.forEach((qObj, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-box';
+                
+                let optionsHtml = '';
+                qObj.options.forEach((opt, optIndex) => {
+                    optionsHtml += `
+                        <li class="option-item">
+                            <label class="option-label">
+                                <input type="radio" name="q_${index}" value="${optIndex}" required>
+                                <span>${opt}</span>
+                            </label>
+                        </li>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <div class="question-text">س${index + 1}: ${qObj.q}</div>
+                    <ul class="options-list">
+                        ${optionsHtml}
+                    </ul>
+                `;
+                qContainer.appendChild(questionDiv);
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==========================================================================
+        // 5. تسليم وتصحيح الامتحان وتجميع تفاصيل الأخطاء والإصابات وإرسالها (بدون كود أو إجابات)
+        // ==========================================================================
+        function submitExam(event) {
+            event.preventDefault();
+
+            let correctCount = 0;
+            const totalQuestions = currentActiveQuestions.length;
+            
+            let correctDetails = [];  // لتجميع نصوص الأسئلة التي أصاب فيها فقط (دون إجاباتها)
+            let incorrectDetails = []; // لتجميع نصوص الأسئلة التي أخطأ فيها فقط (دون إجاباتها)
+
+            currentActiveQuestions.forEach((qObj, index) => {
+                const selectedRadio = document.querySelector(`input[name="q_${index}"]:checked`);
+                if (selectedRadio) {
+                    const answerIndex = parseInt(selectedRadio.value);
+
+                    if (answerIndex === qObj.correct) {
+                        correctCount++;
+                        correctDetails.push(`- س: ${qObj.q}`);
+                    } else {
+                        incorrectDetails.push(`- س: ${qObj.q}`);
+                    }
+                }
+            });
+
+            const finalPercentage = ((correctCount / totalQuestions) * 100).toFixed(0);
+
+            // صياغة الرسائل بدون الإجابات وبدون الكود الشخصي تماماً لأعلى درجات الأمان
+            const correctTextSegment = correctDetails.length > 0 ? correctDetails.join('\n') : "لا يوجد";
+            const incorrectTextSegment = incorrectDetails.length > 0 ? incorrectDetails.join('\n') : "لا يوجد أخطاء! ممتاز جداً 🎉";
+
+            const message = 
+`📝 *تقرير اختبار إلكتروني مفصل* 📝
+
+👤 *الاسم كاملاً:* ${userData.name}
+🏫 *الصف الدراسي:* ${userData.grade}
+📚 *المادة:* ${userData.subject}
+
+📊 *النتيجة:* ${correctCount} من ${totalQuestions} (${finalPercentage}%)
+
+----------------------------------
+✅ *أسئلة نجح في إجابتها:*
+${correctTextSegment}
+
+----------------------------------
+❌ *أسئلة تعثر في إجابتها:*
+${incorrectTextSegment}
+
+----------------------------------
+تم إرسال التقرير بنجاح عبر المنصة.`;
+
+            // تشفير الرسالة لرابط الويب للواتساب
+            const whatsappNumber = "201279350952"; // الرقم المطلوب
+            const encodedText = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            alert(`🎉 تم تصحيح الامتحان بنجاح!\nدرجتك هي: ${correctCount} من ${totalQuestions} (${finalPercentage}%).\n\nاضغط "موافق" لتحويلك فوراً للواتساب لتسجيل تقرير الأسئلة المنجزة والمتعثرة وإرساله للأستاذ.`);
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</body>
+</html>
